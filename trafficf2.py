@@ -9,7 +9,7 @@ import numpy as np
 
 vehicle_model = YOLO("yolov8n.pt")
 
-emergency_model = YOLO("C:/Users/Rachana/OneDrive/Desktop/IOMP/Emergency Vehicle Detection.v1i.yolov8/runs/detect/train3/weights/best.pt")
+emergency_model = vehicle_model
 
 VEHICLE_CONF = 0.4
 EMERGENCY_CONF = 0.60
@@ -187,16 +187,9 @@ final = np.vstack((top,bottom))
 # -----------------------------
 # Evaluation
 # -----------------------------
-# run validation
-metrics = emergency_model.val(
-    data="C:/Users/Rachana/OneDrive/Desktop/IOMP/Emergency Vehicle Detection.v1i.yolov8/data.yaml"
-)
+# Model validation requires the original custom dataset.
+# Validation is not included in the GitHub version.
 
-print(metrics)
-
-# -----------------------------
-# Evaluation
-# -----------------------------
 
 import matplotlib.pyplot as plt
 
